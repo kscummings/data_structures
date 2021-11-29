@@ -31,22 +31,23 @@ class Stack:
     def __init__(self):
         self.s = []
 
+    def is_empty(self):
+        return len(self.s) == 0
+
     def push(self, data):
         self.s.append(data)
         return
 
     def pop(self):
-        if len(self.s) == 0:
+        if self.is_empty():
             return None
         last = self.s[-1]
         self.s = self.s[:-1]
         return last
 
     def peek(self):
-        return None if len(self.s) == 0 else self.s[-1]
+        return None if self.is_empty() else self.s[-1]
 
-    def is_empty(self):
-        return len(self.s) == 0
 
 class QueueTwoStacks:
     def __init__(self):
